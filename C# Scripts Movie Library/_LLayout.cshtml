@@ -1,0 +1,65 @@
+<!-- CSHTML Master Layout (General -Details) Page -->
+<!-- Sonny Sparks -->
+
+<!DOCTYPE html>
+<html lang="en">
+<!--------------------------------------------------------->
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Movie Library</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/Movie_Library.styles.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/lib/main.css"/>
+</head>
+<!--------------------Body Begin------------------------------------->
+<body>
+<!--------Header Begin------------>
+<header class="bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark text-white-50 border-bottom box-shadow mb-3">
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-space-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="navbar-link text-white-50 text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">Movie Library</a>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Movie">Movies</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!---------Header End----------->
+<!---------Container Begin----------->
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+<!---------Container End----------->
+<!---------Footer Begin----------->
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2022 - Movie_Library - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>
+<!----------Footer End---------->
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/main.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+<!-------------------Body End-------------------------------------->
+
+</html>
